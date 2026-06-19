@@ -1,0 +1,791 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:#ffffff;
+    background:#000000;
+    min-height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:235px;
+    height:100vh;
+    background:#111111;
+    padding:25px 18px;
+    z-index:1000;
+    border-right:1px solid #d6b25e;
+}
+
+.brand-box{
+    margin-bottom:35px;
+}
+
+.logo{
+    width:100%;
+    max-height:230px;
+    object-fit:contain;
+    display:block;
+}
+
+.hamburger-btn{
+    display:none;
+    width:100%;
+    border:none;
+    background:#d6b25e;
+    color:#111111;
+    font-weight:800;
+    padding:12px 16px;
+    border-radius:12px;
+    margin-bottom:12px;
+    cursor:pointer;
+}
+
+.language-btn{
+    width:100%;
+    margin-top:18px;
+    border:1px solid #d6b25e;
+    background:transparent;
+    color:#d6b25e;
+    padding:10px 14px;
+    border-radius:12px;
+    font-weight:800;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.language-btn:hover{
+    background:#d6b25e;
+    color:#111111;
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#d6b25e;
+    padding:14px 16px;
+    border-radius:12px;
+    font-weight:700;
+    background:rgba(255,255,255,0.03);
+    transition:0.3s;
+}
+
+.menu a:hover,
+.menu a.active{
+    background:#d6b25e;
+    color:#111111;
+}
+
+/* CONTEÚDO */
+
+.content{
+    margin-left:235px;
+    padding:22px;
+}
+
+/* HERO E CABEÇALHOS */
+
+.hero,
+.page-header{
+    background:linear-gradient(135deg,#d6b25e,#9a7423);
+    border-radius:22px;
+    padding:18px 24px;
+    margin-bottom:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.45);
+}
+
+.premium-hero{
+    padding:24px;
+}
+
+.subtitle{
+    text-transform:uppercase;
+    color:#111111;
+    font-weight:800;
+    letter-spacing:2px;
+    font-size:12px;
+    margin-bottom:6px;
+}
+
+h1{
+    font-size:clamp(1.4rem,2.2vw,2rem);
+    font-weight:800;
+    color:#111111;
+    margin-bottom:8px;
+}
+
+.hero-text,
+.page-header p{
+    color:#111111;
+    font-size:0.92rem;
+    margin-bottom:0;
+}
+
+/* BOTÕES */
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:18px;
+    flex-wrap:wrap;
+}
+
+.main-btn,
+.outline-btn,
+.small-btn,
+.small-outline-btn{
+    text-decoration:none;
+    border:none;
+    border-radius:12px;
+    padding:11px 16px;
+    font-weight:800;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.main-btn,
+.small-btn{
+    background:#111111;
+    color:#d6b25e;
+}
+
+.outline-btn,
+.small-outline-btn{
+    background:transparent;
+    color:#111111;
+    border:2px solid #111111;
+}
+
+.main-btn:hover,
+.small-btn:hover{
+    background:#000000;
+    color:#ffffff;
+}
+
+.outline-btn:hover,
+.small-outline-btn:hover{
+    background:#111111;
+    color:#d6b25e;
+}
+
+/* CARTÕES GERAIS */
+
+.agent-card,
+.property-card,
+.contact-card{
+    background:#ffffff;
+    border:3px solid #d6b25e;
+    border-radius:24px;
+    padding:14px;
+    box-shadow:0 12px 28px rgba(0,0,0,0.35);
+    height:100%;
+    transition:0.3s;
+}
+
+.agent-card:hover,
+.property-card:hover,
+.contact-card:hover{
+    transform:translateY(-5px);
+}
+
+/* PRIMEIRA PÁGINA CONSULTORAS */
+
+.agent-card h2{
+    text-align:center;
+    color:#111111;
+    font-weight:800;
+    margin-bottom:10px;
+    font-size:22px;
+}
+
+.photo-frame{
+    width:100%;
+    height:320px;
+    background:#ffffff;
+    border:4px solid #d6b25e;
+    border-radius:22px;
+    padding:0;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    overflow:hidden;
+    margin-bottom:12px;
+    box-shadow:0 8px 22px rgba(0,0,0,0.20);
+}
+
+.agent-photo{
+    width:92%;
+    height:100%;
+    object-fit:contain;
+    object-position:center bottom;
+    background:#ffffff;
+    display:block;
+}
+
+.agent-card p{
+    color:#111111;
+    text-align:center;
+    line-height:1.45;
+    font-size:13px;
+}
+
+/* WHY SECTION */
+
+.why-section{
+    margin-top:22px;
+}
+
+.why-section h2{
+    color:#d6b25e;
+    font-weight:800;
+    margin-bottom:18px;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.why-card{
+    background:#ffffff;
+    color:#111111;
+    border:3px solid #d6b25e;
+    border-radius:22px;
+    padding:20px;
+    box-shadow:0 12px 28px rgba(0,0,0,0.35);
+}
+
+.why-card i{
+    color:#9a7423;
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.why-card h3{
+    font-size:18px;
+    font-weight:800;
+}
+
+.why-card p{
+    font-size:14px;
+    line-height:1.5;
+}
+
+/* IMÓVEIS */
+
+.property-card{
+    position:relative;
+}
+
+.property-badge{
+    position:absolute;
+    top:24px;
+    left:24px;
+    background:#d6b25e;
+    color:#111111;
+    font-weight:900;
+    font-size:12px;
+    padding:7px 11px;
+    border-radius:999px;
+    z-index:2;
+}
+
+.property-carousel{
+    height:185px;
+    border-radius:18px;
+    overflow:hidden;
+    border:3px solid #d6b25e;
+    margin-bottom:12px;
+    cursor:pointer;
+    background:#ffffff;
+    box-shadow:0 8px 22px rgba(0,0,0,0.22);
+    position:relative;
+}
+
+.property-carousel img{
+    width:100%;
+    height:185px;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+.property-carousel:hover img{
+    transform:scale(1.06);
+}
+
+.photo-count{
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    background:rgba(0,0,0,0.75);
+    color:#ffffff;
+    font-size:12px;
+    padding:6px 9px;
+    border-radius:999px;
+}
+
+.property-card h3{
+    color:#111111;
+    font-weight:800;
+    margin-top:2px;
+    font-size:20px;
+}
+
+.property-location{
+    color:#444444;
+    margin-bottom:8px;
+    font-size:13px;
+}
+
+.property-details{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+    margin-bottom:10px;
+}
+
+.property-details span{
+    color:#111111;
+    background:#f5f0df;
+    border-radius:10px;
+    padding:7px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.property-details i{
+    color:#9a7423;
+    margin-right:4px;
+}
+
+.property-card strong{
+    display:block;
+    color:#9a7423;
+    font-size:19px;
+    margin-bottom:12px;
+}
+
+.property-actions{
+    display:flex;
+    gap:10px;
+}
+
+.property-actions a,
+.property-actions button{
+    flex:1;
+    text-align:center;
+    font-size:13px;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.88);
+    backdrop-filter:blur(10px);
+    z-index:9999;
+    display:none;
+    align-items:center;
+    justify-content:center;
+}
+
+.lightbox.show{
+    display:flex;
+}
+
+.lightbox-content{
+    width:90%;
+    height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.lightbox-content img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+    border-radius:18px;
+    animation:zoomIn 0.25s ease;
+}
+
+@keyframes zoomIn{
+    from{
+        transform:scale(0.92);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.lightbox-counter{
+    position:absolute;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#d6b25e;
+    color:#111111;
+    font-weight:900;
+    padding:8px 14px;
+    border-radius:999px;
+    z-index:3;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next{
+    position:fixed;
+    border:none;
+    background:#d6b25e;
+    color:#111111;
+    font-weight:900;
+    z-index:10000;
+    cursor:pointer;
+}
+
+.lightbox-close{
+    top:22px;
+    right:25px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    font-size:28px;
+    line-height:1;
+}
+
+.lightbox-prev,
+.lightbox-next{
+    top:50%;
+    transform:translateY(-50%);
+    width:50px;
+    height:70px;
+    border-radius:14px;
+    font-size:46px;
+}
+
+.lightbox-prev{
+    left:25px;
+}
+
+.lightbox-next{
+    right:25px;
+}
+
+/* TESTEMUNHOS */
+
+.testimonials-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.testimonial-card{
+    background:#ffffff;
+    border:3px solid #d6b25e;
+    border-radius:24px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.30);
+    min-height:220px;
+}
+
+.quote-mark{
+    font-size:60px;
+    color:#d6b25e;
+    line-height:1;
+    margin-bottom:10px;
+    font-weight:800;
+}
+
+.testimonial-card p{
+    color:#111111;
+    line-height:1.7;
+    font-size:15px;
+    margin-bottom:18px;
+}
+
+.testimonial-card span{
+    color:#9a7423;
+    font-weight:700;
+    font-size:14px;
+}
+
+/* CONTACTOS */
+
+.contact-card h2{
+    color:#111111;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.contact-card p{
+    color:#111111;
+    line-height:1.8;
+}
+
+.contact-card i{
+    color:#9a7423;
+    width:28px;
+}
+
+.contact-link{
+    display:block;
+    text-decoration:none;
+    color:#111111;
+    line-height:1.8;
+    margin-bottom:6px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.contact-link:hover{
+    color:#9a7423;
+}
+
+/* WHATSAPP FIXO */
+
+.whatsapp-box{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    z-index:9000;
+}
+
+.whatsapp-box a{
+    background:#25d366;
+    color:#ffffff;
+    text-decoration:none;
+    font-weight:800;
+    padding:10px 14px;
+    border-radius:999px;
+    box-shadow:0 8px 22px rgba(0,0,0,0.35);
+}
+
+.whatsapp-box i{
+    margin-right:6px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:992px){
+
+    .sidebar{
+        position:relative;
+        width:100%;
+        height:auto;
+        text-align:center;
+        border-right:none;
+        border-bottom:1px solid #d6b25e;
+    }
+
+    .brand-box{
+        max-width:190px;
+        margin:0 auto 20px;
+    }
+
+    .hamburger-btn{
+        display:block;
+    }
+
+    .language-btn{
+        margin-top:12px;
+    }
+
+    .menu{
+        display:none;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .menu.show{
+        display:flex;
+    }
+
+    .content{
+        margin-left:0;
+        padding:18px;
+    }
+
+    .hero,
+    .page-header{
+        text-align:center;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .photo-frame{
+        height:300px;
+    }
+
+    .why-grid,
+    .testimonials-grid{
+        grid-template-columns:1fr;
+    }
+
+    .lightbox-prev{
+        left:8px;
+    }
+
+    .lightbox-next{
+        right:8px;
+    }
+}
+
+@media(max-width:576px){
+
+    h1{
+        font-size:24px;
+    }
+
+    .agent-card h2{
+        font-size:20px;
+    }
+
+    .photo-frame{
+        height:270px;
+    }
+
+    .property-carousel,
+    .property-carousel img{
+        height:170px;
+    }
+
+    .property-details{
+        grid-template-columns:1fr;
+    }
+
+    .menu a{
+        font-size:14px;
+        padding:10px 12px;
+    }
+
+    .content{
+        padding:14px;
+    }
+
+    .hero,
+    .page-header{
+        padding:16px;
+        border-radius:18px;
+    }
+
+    .agent-card,
+    .property-card,
+    .testimonial-card,
+    .contact-card{
+        padding:14px;
+        border-radius:20px;
+    }
+
+    .whatsapp-box{
+        right:12px;
+        bottom:12px;
+    }
+
+    .whatsapp-box a{
+        font-size:13px;
+        padding:9px 12px;
+    }
+}
+
+.property-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.82);
+    backdrop-filter:blur(8px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:9998;
+    padding:20px;
+}
+
+.property-modal.show{
+    display:flex;
+}
+
+.property-modal-content{
+    background:#ffffff;
+    color:#111111;
+    width:min(620px, 100%);
+    border:3px solid #d6b25e;
+    border-radius:26px;
+    padding:28px;
+    position:relative;
+    box-shadow:0 20px 45px rgba(0,0,0,0.45);
+}
+
+.property-modal-close{
+    position:absolute;
+    top:14px;
+    right:16px;
+    border:none;
+    background:#d6b25e;
+    color:#111111;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    font-size:26px;
+    font-weight:900;
+    line-height:1;
+    cursor:pointer;
+}
+
+.property-modal-content h2{
+    color:#111111;
+    font-weight:900;
+    margin-bottom:8px;
+    padding-right:45px;
+}
+
+.property-modal-content p{
+    color:#222222;
+    line-height:1.7;
+}
+
+.modal-property-info{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin:18px 0;
+}
+
+.modal-property-info span{
+    background:#f5f0df;
+    color:#111111;
+    border-radius:12px;
+    padding:10px;
+    font-weight:800;
+}
+
+@media(max-width:576px){
+    .modal-property-info{
+        grid-template-columns:1fr;
+    }
+
+    .property-modal-content{
+        padding:22px;
+    }
+}

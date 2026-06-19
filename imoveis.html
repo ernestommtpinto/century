@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imóveis Disponíveis</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<aside class="sidebar">
+    <div class="brand-box">
+        <img src="assets/logo.png" class="logo" alt="Logo Century 21">
+    </div>
+
+    <button class="hamburger-btn" id="hamburgerBtn">☰ Menu</button>
+
+    <nav class="menu" id="mobileMenu">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="imoveis.html" class="nav-link active">Imóveis</a>
+        <a href="testemunhos.html" class="nav-link">Testemunhos</a>
+        <a href="contactos.html" class="nav-link">Contactos</a>
+    </nav>
+
+    <button class="language-btn" id="languageBtn">PT / ENG</button>
+</aside>
+
+<main class="content">
+    <section class="page-header">
+        <p class="subtitle">Comprar · Vender · Arrendar</p>
+        <h1>Imóveis Disponíveis</h1>
+        <p>Conheça alguns imóveis disponíveis e veja as fotografias em detalhe.</p>
+    </section>
+
+    <section class="container-fluid">
+        <div class="row g-4">
+
+            <script>
+                const casas = [
+                    {id:1, titulo:"Moradia T3", tipo:"VENDA", local:"Lisboa", tipologia:"T3", area:"180 m²", quartos:"3", wc:"2", preco:"€350.000"},
+                    {id:2, titulo:"Apartamento T2", tipo:"ARRENDAMENTO", local:"Cascais", tipologia:"T2", area:"95 m²", quartos:"2", wc:"1", preco:"€1.200/mês"},
+                    {id:3, titulo:"Vivenda T4", tipo:"VENDA", local:"Sintra", tipologia:"T4", area:"240 m²", quartos:"4", wc:"3", preco:"€480.000"},
+                    {id:4, titulo:"Apartamento T1", tipo:"ARRENDAMENTO", local:"Oeiras", tipologia:"T1", area:"70 m²", quartos:"1", wc:"1", preco:"€950/mês"},
+                    {id:5, titulo:"Moradia T5", tipo:"VENDA", local:"Mafra", tipologia:"T5", area:"310 m²", quartos:"5", wc:"4", preco:"€620.000"},
+                    {id:6, titulo:"Apartamento T3", tipo:"VENDA", local:"Amadora", tipologia:"T3", area:"125 m²", quartos:"3", wc:"2", preco:"€290.000"}
+                ];
+
+                casas.forEach(casa => {
+                    document.write(`
+                        <div class="col-lg-4 col-md-6">
+                            <div class="property-card">
+                                <div class="property-badge">${casa.tipo}</div>
+
+                                <div class="property-carousel" onclick="openLightbox(${casa.id}, 0)">
+                                    <img src="assets/casa${casa.id}foto.jpg" alt="${casa.titulo}">
+                                    <div class="photo-count">
+                                        <i class="fa-solid fa-camera"></i> 21 fotos
+                                    </div>
+                                </div>
+
+                                <h3>${casa.titulo}</h3>
+                                <p class="property-location">
+                                    <i class="fa-solid fa-location-dot"></i> ${casa.local}
+                                </p>
+
+                                <div class="property-details">
+                                    <span><i class="fa-solid fa-house"></i> ${casa.tipologia}</span>
+                                    <span><i class="fa-solid fa-ruler-combined"></i> ${casa.area}</span>
+                                    <span><i class="fa-solid fa-bed"></i> ${casa.quartos}</span>
+                                    <span><i class="fa-solid fa-bath"></i> ${casa.wc}</span>
+                                </div>
+
+                                <strong>${casa.preco}</strong>
+
+                                <div class="property-actions">
+                                    <button onclick="openPropertyModal(${casa.id})" class="small-btn">Saber Mais</button>
+                                    <a href="contactos.html" class="small-outline-btn">Contactar</a>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                });
+            </script>
+
+        </div>
+    </section>
+</main>
+
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <button class="lightbox-prev" onclick="changePhoto(-1)">‹</button>
+
+    <div class="lightbox-content">
+        <div class="lightbox-counter" id="lightboxCounter">1 / 21</div>
+        <img id="lightboxImage" src="" alt="Foto do imóvel">
+    </div>
+
+    <button class="lightbox-next" onclick="changePhoto(1)">›</button>
+</div>
+
+<div class="property-modal" id="propertyModal">
+    <div class="property-modal-content">
+        <button class="property-modal-close" onclick="closePropertyModal()">×</button>
+
+        <h2 id="modalPropertyTitle"></h2>
+        <p id="modalPropertyLocation"></p>
+
+        <div class="modal-property-info">
+            <span id="modalPropertyType"></span>
+            <span id="modalPropertyArea"></span>
+            <span id="modalPropertyRooms"></span>
+            <span id="modalPropertyWc"></span>
+        </div>
+
+        <p id="modalPropertyDescription"></p>
+
+        <a href="contactos.html" class="main-btn">Contactar</a>
+    </div>
+</div>
+
+<div class="whatsapp-box">
+    <a href="https://wa.me/351961878124" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> Virgínia
+    </a>
+    <a href="https://wa.me/351XXXXXXXXX" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> Natacha
+    </a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
